@@ -74,25 +74,16 @@ export function qualifiesLongTrip(start: DateTime, end: DateTime): boolean {
   return hours > LONG_TRIP_THRESHOLD_HOURS;
 }
 
-export function quoteReservationPricing(input: {
-  start: DateTime;
-  end: DateTime;
-  hourlyRateCents: number;
-}): ReservationQuote {
-  const { start, end, hourlyRateCents } = input;
-  const durationHours = end.diff(start, "hours").hours || 0;
+function pickCheaper(a: ReservationQuote, b: ReservationQuote): ReservationQuote {
+  return b.totalPriceCents < a.totalPriceCents ? b : a;
+}
 
-  const baseTotalPriceCents = Math.round(hourlyRateCents * durationHours);
-
-  const holidayOk = qualifiesHolidayDiscount(start, end);
-  const longTripOk = qualifiesLongTrip(start, end);
-
-  const holidayTotalCents = Math.round(baseTotalPriceCents * HOLIDAY_DISCOUNT_FACTOR);
-
-  const reducedHourly = Math.max(0, hourlyRateCents - LONG_TRIP_HOURLY_DISCOUNT_CENTS);
-  const longTripTotalCents = Math.round(reducedHourly * durationHours);
-
-  let best: ReservationQuote = {
+function buildBaseQuote(
+  durationHours: number,
+  hourlyRateCents: number,
+  baseTotalPriceCents: number,
+): ReservationQuote {
+  return {
     durationHours,
     baseHourlyRateCents: hourlyRateCents,
     baseTotalPriceCents,
@@ -100,31 +91,59 @@ export function quoteReservationPricing(input: {
     effectiveHourlyRateCents: hourlyRateCents,
     discount: "none",
   };
+}
 
-  if (holidayOk) {
-    const impliedHourly =
-      durationHours > 0 ? Math.round(holidayTotalCents / durationHours) : hourlyRateCents;
-    const candidate: ReservationQuote = {
-      durationHours,
-      baseHourlyRateCents: hourlyRateCents,
-      baseTotalPriceCents,
-      totalPriceCents: holidayTotalCents,
-      effectiveHourlyRateCents: impliedHourly,
-      discount: "holiday_17pct",
-    };
-    if (candidate.totalPriceCents < best.totalPriceCents) best = candidate;
+function buildHolidayQuote(
+  durationHours: number,
+  hourlyRateCents: number,
+  baseTotalPriceCents: number,
+): ReservationQuote {
+  const effectiveHourlyRateCents = Math.round(hourlyRateCents * HOLIDAY_DISCOUNT_FACTOR);
+  const totalPriceCents = Math.round(baseTotalPriceCents * HOLIDAY_DISCOUNT_FACTOR);
+  return {
+    durationHours,
+    baseHourlyRateCents: hourlyRateCents,
+    baseTotalPriceCents,
+    totalPriceCents,
+    effectiveHourlyRateCents,
+    discount: "holiday_17pct",
+  };
+}
+
+function buildLongTripQuote(
+  durationHours: number,
+  hourlyRateCents: number,
+  baseTotalPriceCents: number,
+): ReservationQuote {
+  const effectiveHourlyRateCents = Math.max(0, hourlyRateCents - LONG_TRIP_HOURLY_DISCOUNT_CENTS);
+  const totalPriceCents = Math.round(effectiveHourlyRateCents * durationHours);
+  return {
+    durationHours,
+    baseHourlyRateCents: hourlyRateCents,
+    baseTotalPriceCents,
+    totalPriceCents,
+    effectiveHourlyRateCents,
+    discount: "long_trip_10hr",
+  };
+}
+
+export function quoteReservationPricing(input: {
+  start: DateTime;
+  end: DateTime;
+  hourlyRateCents: number;
+}): ReservationQuote {
+  const { start, end, hourlyRateCents } = input;
+  const durationHours = end.diff(start, "hours").hours || 0;
+  const baseTotalPriceCents = Math.round(hourlyRateCents * durationHours);
+
+  let best = buildBaseQuote(durationHours, hourlyRateCents, baseTotalPriceCents);
+
+  if (qualifiesHolidayDiscount(start, end)) {
+    best = pickCheaper(best, buildHolidayQuote(durationHours, hourlyRateCents, baseTotalPriceCents));
   }
 
-  if (longTripOk) {
-    const candidate: ReservationQuote = {
-      durationHours,
-      baseHourlyRateCents: hourlyRateCents,
-      baseTotalPriceCents,
-      totalPriceCents: longTripTotalCents,
-      effectiveHourlyRateCents: reducedHourly,
-      discount: "long_trip_10hr",
-    };
-    if (candidate.totalPriceCents < best.totalPriceCents) best = candidate;
+  if (qualifiesLongTrip(start, end)) {
+    best = pickCheaper(best, buildLongTripQuote(durationHours, hourlyRateCents, baseTotalPriceCents));
   }
 
   return best;
