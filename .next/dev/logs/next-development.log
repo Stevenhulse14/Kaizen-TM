@@ -1,8 +1,2 @@
-[00:00:01.271] Server  LOG     ✓ Ready in 1147ms
-[00:00:17.341] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:47.838] Browser ERROR   Not implemented
-[00:10:43.418] Server  LOG     ✓ Compiled in 90ms
-[00:10:44.196] Server  LOG     ✓ Compiled in 126ms
-[00:10:44.460] Server  LOG     ✓ Compiled in 73ms
-[00:10:46.683] Server  LOG     ✓ Compiled in 30ms
-[00:11:09.759] Server  LOG     ✓ Compiled in 62ms
+[00:00:01.595] Server  LOG     ✓ Ready in 1384ms
+[00:00:08.053] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

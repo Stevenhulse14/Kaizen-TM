@@ -744,7 +744,7 @@ function AdditionalFilters({ filterOptions }) {
                 children: "Filters"
             }, void 0, false, {
                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                lineNumber: 28,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -760,7 +760,7 @@ function AdditionalFilters({ filterOptions }) {
                                         children: "Price"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                        lineNumber: 35,
+                                        lineNumber: 42,
                                         columnNumber: 15
                                     }, void 0),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -769,17 +769,17 @@ function AdditionalFilters({ filterOptions }) {
                                             (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$formatters$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatDollars"])(minPrice),
                                             " to",
                                             " ",
-                                            maxPrice === 100 ? "$100+" : (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$formatters$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatDollars"])(maxPrice)
+                                            maxPrice >= __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$search$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PRICE_FILTER_SLIDER_MAX_DOLLARS"] ? `${__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$search$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PRICE_FILTER_SLIDER_MAX_DOLLARS"]}+` : (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$formatters$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatDollars"])(maxPrice)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 43,
                                         columnNumber: 15
                                     }, void 0)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 34,
+                                lineNumber: 41,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -791,28 +791,28 @@ function AdditionalFilters({ filterOptions }) {
                                     onValueChange: field.onChange
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 51,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 41,
+                                lineNumber: 50,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 50,
+                                lineNumber: 59,
                                 columnNumber: 13
                             }, void 0)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                        lineNumber: 33,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, void 0)
             }, void 0, false, {
                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                lineNumber: 29,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -828,7 +828,7 @@ function AdditionalFilters({ filterOptions }) {
                                         children: "Passengers"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 69,
                                         columnNumber: 15
                                     }, void 0),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -836,13 +836,13 @@ function AdditionalFilters({ filterOptions }) {
                                         children: field.value
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 70,
                                         columnNumber: 15
                                     }, void 0)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 59,
+                                lineNumber: 68,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -856,28 +856,28 @@ function AdditionalFilters({ filterOptions }) {
                                     onValueChange: (value)=>field.onChange(value[0])
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 73,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 63,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 72,
+                                lineNumber: 81,
                                 columnNumber: 13
                             }, void 0)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                        lineNumber: 58,
+                        lineNumber: 67,
                         columnNumber: 11
                     }, void 0)
             }, void 0, false, {
                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                lineNumber: 54,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -890,7 +890,7 @@ function AdditionalFilters({ filterOptions }) {
                                 children: "Class"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 81,
+                                lineNumber: 90,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -907,43 +907,43 @@ function AdditionalFilters({ filterOptions }) {
                                                     children: classification
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 101,
                                                     columnNumber: 23
                                                 }, void 0)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                                lineNumber: 91,
+                                                lineNumber: 100,
                                                 columnNumber: 21
                                             }, void 0)
                                         }, classification, false, {
                                             fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 99,
                                             columnNumber: 19
                                         }, void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 82,
+                                lineNumber: 91,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 100,
+                                lineNumber: 109,
                                 columnNumber: 13
                             }, void 0)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                        lineNumber: 80,
+                        lineNumber: 89,
                         columnNumber: 11
                     }, void 0)
             }, void 0, false, {
                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                lineNumber: 76,
+                lineNumber: 85,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormField"], {
@@ -956,7 +956,7 @@ function AdditionalFilters({ filterOptions }) {
                                 children: "Make"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 109,
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormControl"], {
@@ -973,43 +973,43 @@ function AdditionalFilters({ filterOptions }) {
                                                     children: make
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                                    lineNumber: 120,
+                                                    lineNumber: 129,
                                                     columnNumber: 23
                                                 }, void 0)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 128,
                                                 columnNumber: 21
                                             }, void 0)
                                         }, make, false, {
                                             fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 127,
                                             columnNumber: 19
                                         }, void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 120,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 110,
+                                lineNumber: 119,
                                 columnNumber: 13
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FormMessage"], {}, void 0, false, {
                                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                                lineNumber: 128,
+                                lineNumber: 137,
                                 columnNumber: 13
                             }, void 0)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                        lineNumber: 108,
+                        lineNumber: 117,
                         columnNumber: 11
                     }, void 0)
             }, void 0, false, {
                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                lineNumber: 104,
+                lineNumber: 113,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1024,13 +1024,13 @@ function AdditionalFilters({ filterOptions }) {
                 children: "Reset all"
             }, void 0, false, {
                 fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-                lineNumber: 132,
+                lineNumber: 141,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/search/AdditionalFilters.tsx",
-        lineNumber: 27,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
@@ -2182,8 +2182,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$server$2f$data_helper
  */ function searchVehicles(input) {
     const { startTime, endTime, passengerCount, classifications, makes, priceMin, priceMax } = input;
     const parsedPriceMin = priceMin;
-    // UI slider uses 100 as the max tick; treat it as "no upper cap" for filtering.
-    const parsedPriceMax = priceMax === 100 ? Number.MAX_SAFE_INTEGER : priceMax;
+    const parsedPriceMax = priceMax;
     try {
         const { start, end } = parseAndValidateTimeRange(startTime, endTime);
         const availableVehicles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$server$2f$data_helpers$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getAvailableVehicles"])({
@@ -3040,7 +3039,7 @@ function SearchPage() {
             minPassengers: 1,
             classification: filterOptions.classifications,
             make: filterOptions.makes,
-            // Wide default so first load still shows the full catalog; lowering the max enforces a real $/hr ceiling.
+            // Wide default (slider max) shows full catalog; lowering max enforces a real $/hr ceiling.
             price: [
                 10,
                 __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$search$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PRICE_FILTER_SLIDER_MAX_DOLLARS"]
@@ -3052,19 +3051,19 @@ function SearchPage() {
             message: "Failed to load filters"
         }, void 0, false, {
             fileName: "[project]/app/components/search/SearchPage.tsx",
-            lineNumber: 49,
+            lineNumber: 53,
             columnNumber: 17
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$search$2f$AdditionalFilters$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AdditionalFilters"], {
             filterOptions: filterOptions
         }, void 0, false, {
             fileName: "[project]/app/components/search/SearchPage.tsx",
-            lineNumber: 51,
+            lineNumber: 55,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/search/SearchPage.tsx",
-        lineNumber: 48,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$form$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Form"], {
@@ -3084,30 +3083,30 @@ function SearchPage() {
                                     children: "Kaizen Wheels"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/search/SearchPage.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 65,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                lineNumber: 60,
+                                lineNumber: 64,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "px-4 col-span-12 md:col-span-9 mt-4 md:mt-0",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$search$2f$TimeRangeFilters$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TimeRangeFilters"], {}, void 0, false, {
                                     fileName: "[project]/app/components/search/SearchPage.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 70,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                lineNumber: 65,
+                                lineNumber: 69,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/search/SearchPage.tsx",
-                        lineNumber: 59,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3124,30 +3123,30 @@ function SearchPage() {
                                                 children: "Filters"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 78,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/search/SearchPage.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 77,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$shared$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetContent"], {
                                             children: filters
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/search/SearchPage.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 80,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/components/search/SearchPage.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 76,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                lineNumber: 71,
+                                lineNumber: 75,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3155,13 +3154,13 @@ function SearchPage() {
                                 children: filters
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                lineNumber: 79,
+                                lineNumber: 83,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/search/SearchPage.tsx",
-                        lineNumber: 70,
+                        lineNumber: 74,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3171,38 +3170,38 @@ function SearchPage() {
                                 message: "Failed to load vehicles"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                lineNumber: 84,
+                                lineNumber: 88,
                                 columnNumber: 25
                             }, void 0),
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$search$2f$VehicleList$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["VehicleList"], {}, void 0, false, {
                                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                                lineNumber: 86,
+                                lineNumber: 90,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/components/search/SearchPage.tsx",
-                            lineNumber: 83,
+                            lineNumber: 87,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/search/SearchPage.tsx",
-                        lineNumber: 82,
+                        lineNumber: 86,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/search/SearchPage.tsx",
-                lineNumber: 58,
+                lineNumber: 62,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/components/search/SearchPage.tsx",
-            lineNumber: 57,
+            lineNumber: 61,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/search/SearchPage.tsx",
-        lineNumber: 56,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 }

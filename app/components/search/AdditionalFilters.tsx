@@ -1,4 +1,7 @@
-import { FormValues } from "@/components/search/form.tsx";
+import {
+  FormValues,
+  PRICE_FILTER_SLIDER_MAX_DOLLARS,
+} from "@/components/search/form.tsx";
 import { Button } from "@/components/shared/ui/button";
 import {
   FormControl,
@@ -39,14 +42,16 @@ export function AdditionalFilters({
               <FormLabel>Price</FormLabel>
               <div className="text-sm">
                 {formatDollars(minPrice)} to{" "}
-                {maxPrice === 100 ? "$100+" : formatDollars(maxPrice)}
+                {maxPrice >= PRICE_FILTER_SLIDER_MAX_DOLLARS
+                  ? `${PRICE_FILTER_SLIDER_MAX_DOLLARS}+`
+                  : formatDollars(maxPrice)}
               </div>
             </div>
             <FormControl>
               <RangeSlider
                 min={10}
-                max={100}
-                step={10}
+                max={PRICE_FILTER_SLIDER_MAX_DOLLARS}
+                step={5}
                 value={field.value}
                 onValueChange={field.onChange}
               />
@@ -145,7 +150,7 @@ export function AdditionalFilters({
           form.getValues().minPassengers === 1 &&
           form.getValues().make === undefined &&
           form.getValues().price[0] === 10 &&
-          form.getValues().price[1] === 100
+          form.getValues().price[1] === PRICE_FILTER_SLIDER_MAX_DOLLARS
         }
       >
         Reset all
