@@ -1,3 +1,6 @@
+/** Upper bound of the hourly rate slider ($/hr); must be ≥ max fleet rate in seed data (~$220). */
+export const PRICE_FILTER_SLIDER_MAX_DOLLARS = 250;
+
 export interface FormValues {
   startDate: Date;
   startTime: string;
