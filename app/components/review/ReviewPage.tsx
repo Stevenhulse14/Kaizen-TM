@@ -85,11 +85,27 @@ function Content() {
               <dt className="text-sm text-gray-600">Hourly Rate</dt>
               <dd>
                 <span className="text-lg">
-                  {formatCents(vehicle.hourly_rate_cents)}
+                  {formatCents(quote.effectiveHourlyRateCents)}
                 </span>
                 <span className="text-xs">/hr</span>
+                {quote.discount !== "none" && (
+                  <span className="text-sm text-muted-foreground line-through ml-2">
+                    {formatCents(quote.baseHourlyRateCents)}
+                    /hr
+                  </span>
+                )}
               </dd>
             </div>
+            {quote.discount !== "none" && (
+              <div>
+                <dt className="text-sm text-gray-600">Discount applied</dt>
+                <dd className="text-sm font-medium text-green-800">
+                  {quote.discount === "holiday_17pct"
+                    ? "17% off total (holiday falls within trip; pick-up/drop-off not on that date)"
+                    : "$10/hr off hourly rate (trip longer than 3 days)"}
+                </dd>
+              </div>
+            )}
             <div>
               <dt className="text-sm text-gray-600">Duration</dt>
               <dd>{formattedDuration}</dd>
@@ -98,6 +114,11 @@ function Content() {
               <dt className="text-sm text-gray-600">Total Cost</dt>
               <dd className="text-2xl font-medium tracking-tight">
                 {formatCents(quote.totalPriceCents)}
+                {quote.discount !== "none" && (
+                  <span className="text-base font-normal text-muted-foreground line-through ml-3">
+                    {formatCents(quote.baseTotalPriceCents)}
+                  </span>
+                )}
               </dd>
             </div>
           </dl>
