@@ -10,7 +10,8 @@
 - **Transcript style:** Each subsection reflects an exchange or decision thread from the chat (prompt → reasoning → outcome).
 - **What broke vs what changed:** Bug analysis is separated from implementation notes so debugging judgment is visible, not only the diff.
 - **Tradeoffs:** Explicit “chose X over Y” calls are called out.
-- **Gaps:** **Part 2 (discounts)** is **implemented** (Exchange **I**). Bonus improvements remain mostly **not** executed beyond notes.
+- **Gaps:** **Part 2 (discounts)** is **implemented** (Exchanges **I**, **J**, Appendix **A**). Bonus improvements remain mostly **not** executed beyond notes.
+- **README Part 2 traceability:** See **Appendix A** at the end of this file (matrix for README §Part 2 / lines ~17–38).
 
 ---
 
@@ -134,6 +135,22 @@ Also updated the filter label: **“250+”** when pegged at slider max (paralle
 
 ---
 
+### Exchange J — README **Part 2** (lines 17–38): frontend + requirement mapping
+
+**User asked (combined thread):** (1) Whether discounts still need to be **integrated into the frontend**. (2) **AI logs for this section** — i.e. document README Part 2 explicitly for reviewers.
+
+**Assistant reasoning — frontend:**  
+
+- README line **24** requires discounts visible **during search**, **checkout**, and **review**.  
+- **Search:** Each row uses **`API.getQuote`** with the same ISO window as **Book now** (`VehicleListItem.tsx`).  
+- **Checkout / review:** The app’s confirmation surface is **`ReviewPage`** (`/review`) — it already calls **`API.getQuote`** and shows hourly/total/discount copy. There is no separate checkout route beyond **Confirm reservation** (still stubbed).  
+- **No duplicated math in UI:** Components only **format** cents from **`ReservationQuote`**; rules stay in **`pricing.ts`**.  
+- **Price filter (Part 1)** still keys off **`hourly_rate_cents`** (catalog “sticker” rate), not trip-discounted effective rate — intentional unless product wants filter-by-quoted-price.
+
+**Assistant did (this update):** Expand **`AI_LOG.md`** with this exchange; **Appendix A** (README Part 2 matrix) lives **at end of file** for reviewer lookup.
+
+---
+
 ## 3. What broke (root cause), not only what we changed
 
 | Symptom | Underlying cause |
@@ -186,7 +203,7 @@ Also updated the filter label: **“250+”** when pegged at slider max (paralle
 | README section | Status in AI-assisted work logged here |
 |----------------|----------------------------------------|
 | **Part 1 — Price filter** | **Implemented** after analysis; see Exchanges **C** and **F** (re-apply). Review `api.ts` + slider files to confirm current tree. |
-| **Part 2 — Discounts** | **Implemented** (Exchange **I**): `holidays.ts`, `pricing.ts`, `getQuote` + search/review UI. |
+| **Part 2 — Discounts** | **Implemented** (Exchanges **I**, **J** + Appendix **A**): `holidays.ts`, `pricing.ts`, `getQuote`, search + review UI vs README L17–L24. |
 | **Bonus — Other improvements** | Only **noted** in user’s `Notes.MD` / observation (frontend-only, in-browser data, images) — **not** executed as features. |
 
 There is **no “Part 3”** in this repo’s README; the rubric text you pasted may refer to another template. **No Part 3 refactor** was performed here — Part **1** + **2** delivery plus documentation/comments.
@@ -220,9 +237,24 @@ Part 2 pricing: `holidays.ts`, `pricing.ts`, `api.ts` (`getQuote`), `VehicleList
 
 Docs: `docs/PART2_PRICING.md` (architecture / rules pointer).
 
-Meta: `AI_LOG.md` (Exchanges **H**, **I**).
+Meta: `AI_LOG.md` (Exchanges **H**–**J**, Appendix **A**).
 
 User notes (not AI-authored content): `Notes.MD`.
+
+---
+
+## Appendix A — README Part 2 requirement checklist (README lines ~17–38)
+
+| README requirement | Where it’s satisfied |
+|--------------------|----------------------|
+| **17% off total** when trip **includes** a holiday but **does not start or end** on that holiday | `pricing.ts` — `qualifiesHolidayDiscount` + `HOLIDAY_DISCOUNT_FACTOR` (**0.83**). |
+| **$10/hr off rate** when trip **> 3 days** | `pricing.ts` — `qualifiesLongTrip` (**> 72 hours**) + **`LONG_TRIP_HOURLY_DISCOUNT_CENTS`**. |
+| **Only one discount** — **better total** wins | `pricing.ts` — compare **`totalPriceCents`** candidates in **`quoteReservationPricing`**. |
+| **Visible during search** | `VehicleListItem.tsx` — **`API.getQuote`**, effective + base strikethrough + label. |
+| **Visible on review / checkout** | `ReviewPage.tsx` — **`API.getQuote`**, summary + discount line + totals (app treats **`/review`** as checkout surface). |
+| **Fictitious holiday list** | `holidays.ts` — README month/day entries. |
+
+**Timezone caveat:** Holiday calendar logic uses **UTC** date parts from Luxon — see **`docs/PART2_PRICING.md`** and Exchange **J**.
 
 ---
 
