@@ -85,3 +85,9 @@ No test runner existed. The project is `"type": "module"` (ESM) with TypeScript.
 - **Test the UI components.** `VehicleListItem` and `ReviewPage` call `API.getQuote` and render the result, but there are no component tests. With more time: render both components with a mocked `ReservationQuote` and assert the strikethrough and discount label appear correctly for each `discount` discriminator value.
 - **Add property-based tests for `qualifiesHolidayDiscount`.** The overlap logic involves UTC calendar boundaries, year rollovers, and exclusion conditions that interact in non-obvious ways. A property-based approach (e.g. fast-check) could generate arbitrary `[start, end]` pairs and verify invariants — for example: "if `start` and `end` are on the same UTC day, the result is always false."
 - **Write `DECISIONS.md` from the start.** The decisions documented here were reconstructed from `AI_LOG.md`. In a real project these would be written as decisions are made, while the tradeoffs are still fresh and before they require archaeology to recover.
+
+---
+
+## Bonus — UX Callout
+
+The vehicle list renders one full-width card per row inside a 9-column grid, leaving significant horizontal space unused on larger screens — a 2-up card layout would show more inventory without requiring additional scrolling, reducing time-to-book. The "Confirm reservation" button on the review page is also a silent no-op with no feedback to the user; even a disabled state with a "coming soon" tooltip would prevent confusion and set honest expectations.
