@@ -237,7 +237,7 @@ Part 2 pricing: `holidays.ts`, `pricing.ts`, `api.ts` (`getQuote`), `VehicleList
 
 Docs: `docs/PART2_PRICING.md` (architecture / rules pointer).
 
-Meta: `AI_LOG.md` (Exchanges **H**–**J**, Appendix **A**).
+Meta: `AI_LOG.md` (Exchanges **H**–**L**, Appendix **A**).
 
 User notes (not AI-authored content): `Notes.MD`.
 
@@ -255,6 +255,22 @@ User notes (not AI-authored content): `Notes.MD`.
 | **Fictitious holiday list** | `holidays.ts` — README month/day entries. |
 
 **Timezone caveat:** Holiday calendar logic uses **UTC** date parts from Luxon — see **`docs/PART2_PRICING.md`** and Exchange **J**.
+
+---
+
+## Exchange L — Part 3 commit, merge to main, push
+
+**User asked:** Commit Part 3 work, merge `s-feature-discounts` into `main`, push both branches, update the log.
+
+**What landed:**
+- `app/server/pricing.ts` — refactored (see Exchange **K**)
+- `app/server/pricing.test.ts` — 14 vitest tests (all passing)
+- `package.json` / `package-lock.json` — vitest added as devDependency; `test` and `test:watch` scripts wired
+- `AI_LOG.md` — Exchange **K** added on feature branch
+
+**Git state after this exchange:**
+- `s-feature-discounts` pushed to `origin` (two commits: refactor+tests, log update)
+- `main` merged via `--no-ff` merge commit and pushed to `origin`
 
 ---
 
