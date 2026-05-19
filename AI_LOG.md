@@ -274,4 +274,46 @@ User notes (not AI-authored content): `Notes.MD`.
 
 ---
 
+## Exchange M — DECISIONS.md created (all 3 parts)
+
+**User asked:** Create `DECISIONS.md` covering all three parts, using `AI_LOG.md` as reference.
+
+**What landed:**
+- `DECISIONS.md` — three sections (Part 1, Part 2, Part 3), each with "what changed and why" and "what I'd do differently without a time constraint"
+- Committed directly to `main` and pushed to `origin`
+
+**Key points documented:**
+- Part 1: sentinel removal, slider cap rationale, what a data-driven max would look like
+- Part 2: UTC timezone call, 72h interpretation, batched quoting gap, stale `total_price_cents` on reservations
+- Part 3: `buildHolidayQuote` extraction, `pickCheaper`, `effectiveHourlyRateCents` fix, vitest choice, missing component + property-based tests
+
+---
+
+## Exchange N — UX callout discussion
+
+**User asked:** Discuss UX/UI improvements. Keep the slickness and the "Book now" component. Wants: Navbar with user navigation, a user page, fix wasted space, more features. Likes the double-sided price slider.
+
+**Current UI inventory (from code review):**
+- `SearchPage.tsx` — sticky header with title + time filters, 3-col filter sidebar (md+), 9-col vehicle grid, mobile sheet for filters
+- `VehicleListItem.tsx` — card with image, make/model/year/class/passengers/doors, effective rate + strikethrough + est. total + discount label + **Book now** button
+- `AdditionalFilters.tsx` — double-sided price slider (RangeSlider), passengers slider, class toggle group, make toggle group, reset button
+- `ReviewPage.tsx` — mini layout with vehicle details, reservation summary (timeline, hourly rate, discount, duration, total), stubbed Confirm button
+
+**What's liked / keep as-is:**
+- "Book now" card component and its pricing display
+- Double-sided price RangeSlider
+- Overall clean/slick aesthetic
+
+**Proposed improvements discussed:**
+1. **Navbar** — persistent top nav with logo, "My Trips" link, user avatar/profile icon; collapses to hamburger on mobile
+2. **User page** — `/profile` route showing mock user info + reservation history (reads from seed `Reservation` data)
+3. **Wasted space** — vehicle cards currently stack in a single column on the 9-col grid; switching to a 2-up card grid on large screens fills the space and shows more inventory at a glance
+4. **Vehicle card enhancements** — larger image, color/fuel type badge, star rating placeholder — more visual weight per card without changing the booking flow
+5. **Hero / empty state** — when no filters are applied the grid has no context; a subtle header ("X vehicles available for your dates") grounds the list
+6. **Search header** — the "Kaizen Wheels" title doubles as the only brand presence; moving it to the Navbar frees the sticky bar to be purely functional (dates + a search/apply button)
+
+*Implementation not started in this exchange — planning only.*
+
+---
+
 *End of AI_LOG for this session.*
