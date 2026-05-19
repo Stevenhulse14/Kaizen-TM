@@ -1,9 +1,10 @@
-import { formatCents } from "@/lib/formatters";
-import { Vehicle } from "@/server/data";
-import { useBase64Image } from "@/util/useBase64Image";
-import Link from "next/link";
 import { Button } from "@/components/shared/ui/button";
 import { Card, CardTitle } from "@/components/shared/ui/card";
+import { formatCents } from "@/lib/formatters";
+import { Vehicle } from "@/server/data";
+import { API } from "@/server/api";
+import { useBase64Image } from "@/util/useBase64Image";
+import Link from "next/link";
 
 export function VehicleListItem({
   vehicle,
@@ -14,6 +15,12 @@ export function VehicleListItem({
   startDateTime: Date;
   endDateTime: Date;
 }) {
+  const quote = API.getQuote({
+    vehicleId: vehicle.id,
+    startTime: startDateTime.toISOString(),
+    endTime: endDateTime.toISOString(),
+  });
+
   const bookNowParams = new URLSearchParams({
     id: vehicle.id,
     start: startDateTime.toISOString(),
@@ -55,9 +62,30 @@ export function VehicleListItem({
       </div>
       <div className="md:ml-auto text-center md:text-right flex flex-col justify-center mt-4 md:mt-0">
         <p className="text-xl font-bold">
-          {formatCents(vehicle.hourly_rate_cents)}
+          {formatCents(quote.effectiveHourlyRateCents)}
           <span className="text-sm text-gray-700 font-normal ml-0.5">/hr</span>
         </p>
+        {quote.discount !== "none" && (
+          <p className="text-sm text-muted-foreground line-through">
+            {formatCents(quote.baseHourlyRateCents)}
+            <span className="font-normal">/hr</span>
+          </p>
+        )}
+        <p className="text-sm text-gray-600 mt-1">
+          Est. total {formatCents(quote.totalPriceCents)}
+          {quote.discount !== "none" && (
+            <span className="text-muted-foreground line-through ml-2">
+              {formatCents(quote.baseTotalPriceCents)}
+            </span>
+          )}
+        </p>
+        {quote.discount !== "none" && (
+          <p className="text-xs text-green-700 mt-1">
+            {quote.discount === "holiday_17pct"
+              ? "17% off total"
+              : "$10/hr off rate"}
+          </p>
+        )}
         <Button asChild className="mt-2 w-full sm:w-auto">
           <Link href={`/review?${bookNowParams.toString()}`}>
             Book now

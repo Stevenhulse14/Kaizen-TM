@@ -10,6 +10,9 @@ import {
   getVehicleById,
   getVehicles,
 } from "./data_helpers";
+import { quoteReservationPricing } from "./pricing";
+
+export type { AppliedDiscount, ReservationQuote } from "./pricing";
 
 /** Parses ISO strings from the client and enforces ordering. */
 const parseAndValidateTimeRange = (startTime: string, endTime: string) => {
@@ -30,22 +33,6 @@ const parseAndValidateTimeRange = (startTime: string, endTime: string) => {
     throw new Error("BAD REQUEST: end_time must be after start_time");
   }
   return { start, end };
-};
-
-/** Quote math: duration × hourly rate (both from validated interval). */
-const calculateTotalPrice = (
-  start: DateTime,
-  end: DateTime,
-  hourlyRateCents: number,
-) => {
-  // `diff(..., "hours").hours` is a floating-point hour count; `|| 0` guards a zero edge case.
-  const durationInHours = end.diff(start, "hours").hours || 0;
-
-  return {
-    totalPriceCents: hourlyRateCents * durationInHours,
-    hourlyRateCents,
-    durationInHours,
-  };
 };
 
 /** Shared path for quote/booking flows: valid window + vehicle must exist. */
@@ -162,14 +149,18 @@ function getReservation(id: string) {
   return reservation;
 }
 
-/** Price preview for a vehicle + time window (no persistence). */
+/** Price preview with README Part 2 discounts (computed in `pricing.ts`). */
 function getQuote(input: {
   vehicleId: string;
   startTime: string;
   endTime: string;
 }) {
   const { vehicle, start, end } = validateReservationAndGetVehicle(input);
-  return calculateTotalPrice(start, end, vehicle.hourly_rate_cents);
+  return quoteReservationPricing({
+    start,
+    end,
+    hourlyRateCents: vehicle.hourly_rate_cents,
+  });
 }
 
 export const API = {
