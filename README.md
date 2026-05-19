@@ -52,7 +52,7 @@ Any other improvements we should make to this app? (e.g. any UX issues that stan
 
 ## Submission context
 
-This repository submission implements the take-home requirements above (Parts 1–2, plus notes toward the bonus where documented). For reviewer convenience:
+This repository submission implements the take-home requirements above (Parts 1,2 & 3, plus notes toward the bonus where documented). For reviewer convenience:
 
 - **`DECISIONS.md`** — Engineering choices, root causes, and what would change with more time.  
 - **`AI_LOG.md`** — Structured transcript of AI-assisted work, requirement traceability (including README Part 2), and tradeoffs.  
