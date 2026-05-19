@@ -90,4 +90,29 @@ No test runner existed. The project is `"type": "module"` (ESM) with TypeScript.
 
 ## Bonus — UX Callout
 
-The vehicle list renders one full-width card per row inside a 9-column grid, leaving significant horizontal space unused on larger screens — a 2-up card layout would show more inventory without requiring additional scrolling, reducing time-to-book. The "Confirm reservation" button on the review page is also a silent no-op with no feedback to the user; even a disabled state with a "coming soon" tooltip would prevent confusion and set honest expectations.
+### What's working well — keep it
+
+- **"Book now" card** — the pricing layout (effective rate, strikethrough base, est. total, discount label) is clean and informative. No changes needed.
+- **Double-sided price `RangeSlider`** — feels natural and communicates a budget window clearly. One of the stronger UI choices in the current build.
+- **Overall aesthetic** — the blur/backdrop sticky header and card layout have a slick feel that's worth preserving in any additions.
+
+### Issues to flag to a designer
+
+**1. Wasted horizontal space in the vehicle grid**
+The vehicle list renders one full-width card per row inside a 9-column grid, leaving significant horizontal space unused on larger screens. A 2-up card layout would show more inventory without requiring additional scrolling, reducing time-to-book.
+
+**2. Silent no-op "Confirm reservation" button**
+The button on the review page calls `console.error("Not implemented")` with no user-facing feedback. Even a disabled state with a tooltip ("Booking coming soon") would set honest expectations instead of leaving users wondering if the click registered.
+
+**3. No navigation / no user context**
+There is no navbar. Once a user lands on the search page there's no way to navigate back from the review page except the browser back button, and there's no persistent identity (logged-in user, saved trips, profile). A minimal navbar with a logo, a "My Trips" link, and a user avatar would give the app structure and make it feel like a product rather than a prototype.
+
+**4. No user page**
+There's nowhere for a user to see their reservation history or account details. A `/profile` route showing mock user info and past reservations (the seed data has `Reservation` records) would complete the basic user journey.
+
+### If I had more time
+
+- Add a navbar component (logo left, "My Trips" + user avatar right, collapses to hamburger on mobile)
+- Add a `/profile` page reading from seed `Reservation` data
+- Switch the vehicle grid to 2-up cards on large screens
+- Add a result count header ("X vehicles available for your dates") — the grid currently has no context label
