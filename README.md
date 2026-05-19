@@ -1,3 +1,10 @@
+## Interview walkthrough (video)
+
+- **[Kaizen SWE Take-home — Part 1](https://youtu.be/V4K8fKjqezs)** — price filter bug and related context  
+- **[Kaizen SWE Take-home — Part 2](https://youtu.be/shh8TdURrnw)** — discounts, pricing layout, and UI integration  
+
+---
+
 <img src="public/logo.svg" alt="Kaizen Logo" width="64" style="background: #666; padding: 0.25rem; border-radius: 100%; margin-bottom: 1rem;" />
 
 ## Project requirements
@@ -40,3 +47,17 @@ List of fictitious holidays (10 randomly sampled dates in the year):
 ### **(Bonus) Other improvements**
 
 Any other improvements we should make to this app? (e.g. any UX issues that stand out?)
+
+---
+
+## Submission context
+
+This repository submission implements the take-home requirements above (Parts 1–2, plus notes toward the bonus where documented). For reviewer convenience:
+
+- **`DECISIONS.md`** — Engineering choices, root causes, and what would change with more time.  
+- **`AI_LOG.md`** — Structured transcript of AI-assisted work, requirement traceability (including README Part 2), and tradeoffs.  
+- **`docs/PART2_PRICING.md`** — Where pricing/discount logic lives and how the frontend consumes **`API.getQuote`** without duplicating rules.
+
+**Running locally:** install dependencies with `npm install`, then `npm run dev` and open the URL Next.js prints (typically `http://localhost:3000`). Use `npm run ts` for a TypeScript check.
+
+The walkthrough videos linked at the **top of this file** cover Parts **1** and **2** in more depth.
