@@ -1,7 +1,10 @@
 "use client";
 
 import { AdditionalFilters } from "@/components/search/AdditionalFilters.tsx";
-import { FormValues } from "@/components/search/form.tsx";
+import {
+  FormValues,
+  PRICE_FILTER_SLIDER_MAX_DOLLARS,
+} from "@/components/search/form.tsx";
 import { TimeRangeFilters } from "@/components/search/TimeRangeFilters.tsx";
 import { VehicleList } from "@/components/search/VehicleList.tsx";
 import { ErrorFallback } from "@/components/shared/ErrorFallback";
@@ -40,7 +43,8 @@ export function SearchPage() {
       minPassengers: 1,
       classification: filterOptions.classifications,
       make: filterOptions.makes,
-      price: [10, 100], // Default price range is $10-$100 per hour
+      // Wide default (slider max) shows full catalog; lowering max enforces a real $/hr ceiling.
+      price: [10, PRICE_FILTER_SLIDER_MAX_DOLLARS],
     },
   });
 
